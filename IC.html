@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+		}
+		body{
+		background-color:#4286f4; 
+		}
+		#mainBox{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 500px;
+			height: 300px;
+			background-color: #fff;
+		}
+		#mainBox h2{
+			text-align: center;
+		}
+		#mainBox input{
+			display: block;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50%;
+			height: 2.5rem;
+			transition: 0.5s;
+			border-radius: 20px;
+			outline: none;
+			border-bottom:5px solid #bfbfbf;
+
+		}
+		#mainBox input:focus{
+			width: 60%;
+		}
+		#mainBox button{
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<section id="mainBox">
+	<div class="container">
+		<h2>A message you would like to send</h2>
+		<input type="text" name="text" id="message">
+		<h2>Last Message Delivered</h2>
+		<button class="btn btn-success " id="sendbtn">Press to send</button>
+		<h2 class="comment"></h2>
+	</div>
+
+</section>
+
+<script type="text/javascript">
+	const sendbtn = document.querySelector("#sendbtn");
+	const comment = document.querySelector(".comment");
+	const message = document.querySelector('#message');
+
+	sendbtn.addEventListener("click",sendMsg);
+	function sendMsg(){
+		let content = message.value; 
+		if(content === '')
+		{
+			alert("Current Value is Empty!! Enter a valid input");
+		}
+		else{
+		comment.innerHTML =  content;
+	}
+		
+	}
+
+
+
+
+</script>
+</body>
+</html>
